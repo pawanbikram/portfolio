@@ -5,6 +5,11 @@ export const profile = {
   email: "pawanshahi49@gmail.com",
   phone: "9867084830",
   website: "pawanshahi.com.np",
+  socials: {
+    linkedin: "https://www.linkedin.com/in/motion-suke",
+    x: "https://x.com/motion_suke",
+    facebook: "https://www.facebook.com/motion.suke",
+  },
 } as const;
 
 export const about = {

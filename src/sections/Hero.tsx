@@ -113,8 +113,8 @@ export default function Hero() {
                     teams, and UX details that convert.
                   </p>
                 </div>
-                <div className="relative h-14 w-14 shrink-0">
-                  <div className="absolute inset-0 rounded-2xl border border-white/10 bg-white/5" />
+                <div className="relative h-14 w-14 shrink-0 rounded-2xl infinite-edge">
+                  <div className="absolute inset-0 rounded-2xl bg-slate-950/50" />
                   <img
                     src={avatar}
                     alt={profile.name}
