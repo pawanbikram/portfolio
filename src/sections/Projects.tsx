@@ -19,7 +19,7 @@ export default function Projects() {
           {projects.map((p, idx) => (
             <motion.div
               key={p.name}
-              initial={{ opacity: 0, y: 12 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: idx * 0.06 }}
@@ -35,12 +35,15 @@ export default function Projects() {
                       {p.description}
                     </p>
                   </div>
-                  <div className="h-10 w-10 shrink-0 rounded-2xl border border-white/10 bg-gradient-to-br from-indigo-500/20 via-fuchsia-500/10 to-cyan-400/10" />
+                  <div className="h-10 w-10 shrink-0 rounded-2xl border border-white/10 bg-linear-to-br from-indigo-500/20 via-fuchsia-500/10 to-cyan-400/10" />
                 </div>
 
                 <div className="mt-5 flex flex-wrap gap-2">
                   {p.tech.map((t) => (
-                    <Badge key={t} className="hover:border-white/20 hover:bg-white/10">
+                    <Badge
+                      key={t}
+                      className="hover:border-white/20 hover:bg-white/10"
+                    >
                       {t}
                     </Badge>
                   ))}
@@ -62,4 +65,3 @@ export default function Projects() {
     </section>
   );
 }
-

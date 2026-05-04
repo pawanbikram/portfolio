@@ -59,7 +59,7 @@ export default function Navbar() {
   }, [y]);
 
   useEffect(() => {
-    const sectionIds = items.map((i) => i.id);
+    const sectionIds = ["top", ...items.map((i) => i.id)];
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => Boolean(el));
@@ -117,7 +117,10 @@ export default function Navbar() {
                 <button
                   key={item.id}
                   type="button"
-                  onClick={() => scrollToId(item.id)}
+                  onClick={() => {
+                    setActiveId(item.id);
+                    scrollToId(item.id);
+                  }}
                   className={[
                     "rounded-xl px-3 py-2 text-sm transition",
                     activeId === item.id
@@ -191,7 +194,10 @@ export default function Navbar() {
                   <button
                     key={item.id}
                     type="button"
-                    onClick={() => scrollToId(item.id)}
+                    onClick={() => {
+                      setActiveId(item.id);
+                      scrollToId(item.id);
+                    }}
                     className={[
                       "group flex flex-col items-center justify-center gap-1 rounded-xl px-2 py-2 text-[11px] transition",
                       isActive
